@@ -1,0 +1,180 @@
+/* Font Import */
+@font-face {
+    font-family: 'Piximisa';
+    src: url('/assets/fonts/piximisa.woff2') format('woff2'),
+         url('/assets/fonts/piximisa.woff') format('woff'),
+         url('/assets/fonts/piximisa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Piximisa', sans-serif; /* Updated to use Piximisa font */
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #333;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #00ffcc;
+}
+
+/* Main Section (Art, Software, etc.) */
+section {
+    padding: 3rem 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Product Showcase Styles */
+.product-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.status {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.status.available {
+    color: #00ffcc;
+}
+
+.status.sold {
+    color: #ff4d4d;
+}
+
+.contact-info a {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Hover Effects */
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+/* Particle Background */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .product-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
