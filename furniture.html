@@ -4,79 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="furniture.html">Furniture</a></li>
-            <li><a href="software.html">Software</a></li>
-            <li><a href="art.html">Art</a></li>
-        </ul>
-    </nav>
+    <header>
+        <button class="menu-toggle">☰</button>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="art.html">Art</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Furniture Showcase -->
-    <section class="furniture">
-        <div class="container">
+    <main>
+        <section class="content">
             <h1>Furniture Showcase</h1>
-            <p>Explore my collection of unique furniture designs. Each piece is crafted with care, precision, and creativity. Contact me via email or text if you'd like to purchase or inquire about any item.</p>
-            
-            <div class="product-list">
-                <!-- Product 1 -->
-                <div class="product">
-                    <img src="assets/images/furniture1.jpg" alt="Modern Sofa">
-                    <h3>Modern Sofa</h3>
-                    <p>A sleek, modern sofa designed for comfort and style.</p>
-                    <span class="status available">Available</span>
-                    <p class="contact-info">To purchase, contact me via <a href="mailto:youremail@example.com">email</a> or <a href="tel:+1234567890">phone</a>.</p>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product">
-                    <img src="assets/images/furniture2.jpg" alt="Dining Table">
-                    <h3>Dining Table</h3>
-                    <p>A beautiful, handcrafted dining table with minimalist design.</p>
-                    <span class="status sold">Sold</span>
-                    <p class="contact-info">To inquire about similar items, reach out to me.</p>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product">
-                    <img src="assets/images/furniture3.jpg" alt="Coffee Table">
-                    <h3>Coffee Table</h3>
-                    <p>A stylish coffee table that complements modern living rooms.</p>
-                    <span class="status available">Available</span>
-                    <p class="contact-info">To purchase, contact me via <a href="mailto:youremail@example.com">email</a> or <a href="tel:+1234567890">phone</a>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p>Here are some of the furniture pieces I've designed:</p>
+            <!-- Add items here -->
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>Contact: <a href="mailto:your@email.com">your@email.com</a></p>
     </footer>
-
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script>
-        particlesJS("particles-js", {
-            particles: {
-                number: {
-                    value: 80
-                },
-                size: {
-                    value: 3
-                },
-                move: {
-                    speed: 3
-                }
-            }
-        });
-    </script>
 </body>
 </html>

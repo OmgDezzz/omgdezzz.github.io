@@ -4,79 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="furniture.html">Furniture</a></li>
-            <li><a href="software.html">Software</a></li>
-            <li><a href="art.html">Art</a></li>
-        </ul>
-    </nav>
+    <header>
+        <button class="menu-toggle">☰</button>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="art.html">Art</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Art Showcase -->
-    <section class="art">
-        <div class="container">
+    <main>
+        <section class="content">
             <h1>Art Showcase</h1>
-            <p>Explore my artwork and creative projects. Whether you're interested in purchasing or simply appreciating my art, feel free to contact me for inquiries or collaborations.</p>
-            
-            <div class="product-list">
-                <!-- Artwork 1 -->
-                <div class="product">
-                    <img src="assets/images/art1.jpg" alt="Cyberpunk Cityscape">
-                    <h3>Cyberpunk Cityscape</h3>
-                    <p>A vibrant and futuristic cityscape blending cyberpunk elements with advanced technology.</p>
-                    <span class="status available">Available</span>
-                    <p class="contact-info">For purchase or inquiries, contact me via <a href="mailto:youremail@example.com">email</a> or <a href="tel:+1234567890">phone</a>.</p>
-                </div>
-                
-                <!-- Artwork 2 -->
-                <div class="product">
-                    <img src="assets/images/art2.jpg" alt="Abstract Patterns">
-                    <h3>Abstract Patterns</h3>
-                    <p>An abstract exploration of shapes and colors that evoke emotion through their composition.</p>
-                    <span class="status sold">Sold</span>
-                    <p class="contact-info">Feel free to contact me for similar artwork or collaborations.</p>
-                </div>
-                
-                <!-- Artwork 3 -->
-                <div class="product">
-                    <img src="assets/images/art3.jpg" alt="AI-Generated Portrait">
-                    <h3>AI-Generated Portrait</h3>
-                    <p>A portrait created using advanced AI algorithms, exploring the intersection of technology and human expression.</p>
-                    <span class="status available">Available</span>
-                    <p class="contact-info">To inquire about purchasing this piece or to discuss commissions, contact me via <a href="mailto:youremail@example.com">email</a> or <a href="tel:+1234567890">phone</a>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p>Here are some of my art projects:</p>
+            <!-- Add art items here -->
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>Contact: <a href="mailto:your@email.com">your@email.com</a></p>
     </footer>
-
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script>
-        particlesJS("particles-js", {
-            particles: {
-                number: {
-                    value: 80
-                },
-                size: {
-                    value: 3
-                },
-                move: {
-                    speed: 3
-                }
-            }
-        });
-    </script>
 </body>
 </html>

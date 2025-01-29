@@ -3,148 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Your Website</title>
-
-    <!-- External Font (Piximisa) -->
-    <link href="https://fonts.googleapis.com/css2?family=Piximisa&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Scroll Effects & Particle Background -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
-    <style>
-        body {
-            font-family: 'Piximisa', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            color: white;
-        }
-    </style>
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
-
 <body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-
-    <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="furniture.html">Furniture</a></li>
-            <li><a href="software.html">Software</a></li>
-            <li><a href="art.html">Art</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Welcome to My Personal Website</h1>
-        <p>Explore my projects, products, and creative work.</p>
-        <a href="about.html" class="btn">Learn More</a>
+    <header>
+        <button class="menu-toggle">☰</button>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="art.html">Art</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
-    </footer>
+    <main>
+        <section class="hero">
+            <img src="images/hero-image.jpg" alt="Hero Image">
+            <h1>Welcome to My Website!</h1>
+        </section>
+        <section class="content">
+            <p>Here you'll find information about me, my projects, and much more.</p>
+        </section>
+    </main>
 
-    <!-- JavaScript for Particle Effect -->
-    <script>
-        particlesJS("particles-js", {
-            particles: {
-                number: {
-                    value: 100,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#00FF00"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 10,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#00FF00",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "window",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "grab"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    }
-                },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    push: {
-                        particles_nb: 4
-                    }
-                }
-            },
-            retina_detect: true
-        });
-    </script>
+    <footer>
+        <p>Contact: <a href="mailto:your@email.com">your@email.com</a></p>
+    </footer>
 </body>
 </html>
