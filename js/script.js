@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
+// Get the elements for the hamburger menu and the navigation menu
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
 
-    menuButton.addEventListener('click', function() {
-        navbar.classList.toggle('active');
-    });
+// Toggle the menu visibility when the hamburger icon is clicked
+menuToggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
 });
