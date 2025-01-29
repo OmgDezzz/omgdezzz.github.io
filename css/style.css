@@ -35,10 +35,11 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0; /* Keep particles behind the content */
+    z-index: -1;  /* Make sure particles stay behind the content */
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Ensure particles don't interfere with other content */
+    pointer-events: none;
+    opacity: 0.5; /* Adjust opacity to make it more visible */
 }
 
 /* About Section */
