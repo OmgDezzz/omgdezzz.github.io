@@ -1,5 +1,111 @@
-/*!
- * Particles.js v2.0.0
- * https://github.com/VincentGarreau/particles.js
- */
-!function(a){"use strict";var b="object"==typeof self&&self.self===self&&self||"object"==typeof global&&global.global===global&&global;"function"==typeof define&&define.amd?define(["exports"],function(b){a(b)}):"object"==typeof module&&module.exports?a(module.exports):a(b.pJSDom={})}(function(a){"use strict";var b=function(a,b){return Math.floor(Math.random()*(b-a+1))+a},c=function(a,b){return Math.random()*(b-a)+a};function d(a,b){return a.x*b.x+a.y*b.y}var e=function(a,b){return this.x=a,this.y=b,this.vx=0,this.vy=0,this.radius=0,this.color="",this.opacity=1,this.speed=0,this.direction=0,this.angle=0,this.bounce=!1,this.setAngle=function(a){this.angle=a},this.setSpeed=function(a){this.speed=a},this.updatePosition=function(){this.x+=this.vx,this.y+=this.vy},this.applyForce=function(a){this.vx+=a.x,this.vy+=a.y},this.reset=function(){this.x=b.x,this.y=b.y,this.vx=0,this.vy=0}},f=function(a){this.canvas=a.canvas,this.ctx=a.ctx,this.particles=[],this.particleCount=a.particleCount,this.colors=a.colors,this.maxParticleSize=a.maxParticleSize,this.connectParticles=a.connectParticles,this.init=function(){for(var a=0;a<this.particleCount;a++){var b=c(1,this.maxParticleSize),d=this.colors[Math.floor(Math.random()*this.colors.length)];this.particles.push(new e(b,{x:Math.random()*this.canvas.width,y:Math.random()*this.canvas.height}))}},this.update=function(){for(var a=0;a<this.particles.length;a++)this.particles[a].updatePosition()},this.draw=function(){this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);for(var a=0;a<this.particles.length;a++){var b=this.particles[a];this.ctx.beginPath(),this.ctx.arc(b.x,b.y,b.radius,0,2*Math.PI,!1),this.ctx.fillStyle=b.color,this.ctx.fill()}},this.init()};a.pJS=function(a,b){var c=this;if(c.el=document.querySelector(a),!c.el)throw new Error("Element not found: "+a);c.el.pJS=c,c.canvas={el:c.el.querySelector("canvas")},c.canvas.ctx=c.canvas.el.getContext("2d"),c.particles=new f({canvas:c.canvas.el,ctx:c.canvas.ctx,particleCount:b.particles.number.value,colors:b.particles.color.value,maxParticleSize:b.particles.size.value,connectParticles:b.particles.line_linked.enable}),c.start=function(){requestAnimationFrame(c.loop)},c.loop=function(){c.particles.update(),c.particles.draw(),requestAnimationFrame(c.loop)},c.start()},a.pJSDom=[]});
+/* Updated Particles.js file */
+(function(){
+    "use strict";
+    window.onload = function() {
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    };
+})();
