@@ -3,104 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - AI Cyberpunk</title>
+    <title>Repository-V</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="particles.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Piximisa&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Piximisa', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="smoke-overlay"></div>
     <header>
-        <h1 class="glitch">Welcome to My AI Cyberpunk World</h1>
+        <h1 class="title">Repository-V</h1>
         <nav>
             <ul>
-                <li><a href="#furniture">Furniture</a></li>
-                <li><a href="#software">Software</a></li>
-                <li><a href="#art">Art</a></li>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="furniture.html" class="nav-link">Furniture</a></li>
+                <li><a href="software.html" class="nav-link">Software</a></li>
             </ul>
         </nav>
     </header>
+    <main>
+        <section class="intro">
+            <img src="portrait.jpg" alt="User Portrait" class="portrait">
+            <p class="bio">
+                I was born in Holguin, Cuba. I am a United States Navy veteran, and I worked in the medical field as a Corpsman, which is the Navy term for a medic. Currently, I am studying Computer Science and Artificial Intelligence, with a passion for entrepreneurship. I am working on several exciting projects ranging from furniture and clothing to software and AI. This website serves as a hub for all my different projects, and you can explore them by navigating the menu above. If you're looking for a great place to eat, check out my sister’s restaurant, <strong>"Pizza Art Wine"</strong> located in Highland Perkins.
+            </p>
+        </section>
+    </main>
     <script src="script.js"></script>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #0a0a0a;
-            color: #0ff;
-            font-family: 'Piximisa', sans-serif;
-            overflow: hidden;
-        }
-
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            z-index: -1;
-        }
-
-        .smoke-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            background: url('smoke.gif') no-repeat center center/cover;
-            opacity: 0.3;
-            z-index: -1;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .glitch {
-            font-size: 3em;
-            text-transform: uppercase;
-            animation: glitch 1s infinite;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav ul li {
-            display: inline;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #0ff;
-            font-size: 1.2em;
-            transition: color 0.3s ease-in-out;
-        }
-
-        nav ul li a:hover {
-            color: #f0f;
-        }
-
-        @keyframes glitch {
-            0% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
-            50% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
-            100% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
-        }
-    </style>
-
-    <script>
-        particlesJS.load('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 100
-                },
-                "size": {
-                    "value": 3
-                }
-            }
-        });
-    </script>
 </body>
 </html>
+
