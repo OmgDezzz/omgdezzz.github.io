@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Collection | Repository-V</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Furniture-Specific Styles */
+        .furniture-header {
+            margin-bottom: 2rem;
+        }
+        
+        .furniture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            padding: 1rem 0;
+        }
 
+        .furniture-card {
+            background: var(--bg-darker);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .furniture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(110, 69, 226, 0.2);
+        }
+
+        .furniture-img {
+            width: 100%;
+            height: 200px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .furniture-info {
+            padding: 1.2rem;
+        }
+
+        .furniture-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .furniture-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            min-height: 40px;
+        }
+
+        .marketplace-btn {
+            display: block;
+            width: 100%;
+            padding: 0.6rem;
+            background: #1877F2; /* Facebook blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .marketplace-btn:hover {
+            background: #166FE5;
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.2rem;
+            background: var(--bg-darker);
+            border: 1px solid var(--divider);
+            color: var(--text-secondary);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .furniture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .furniture-img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="furniture.html" class="active">Furniture</a></li>
+                <li><a href="software.html">Software</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="hero furniture-header">
+            <h1>Furniture Collection</h1>
+            <div class="divider"></div>
+            <p class="description">
+                Handpicked furniture pieces available for purchase. Click any item to view on Facebook Marketplace.
+            </p>
+        </header>
+
+        <!-- Category Filters -->
+        <div class="category-filter">
+            <button class="category-btn active" data-category="all">All Items</button>
+            <button class="category-btn" data-category="chairs">Chairs</button>
+            <button class="category-btn" data-category="tables">Tables</button>
+            <button class="category-btn" data-category="desks">Desks</button>
+            <button class="category-btn" data-category="storage">Storage</button>
+        </div>
+
+        <!-- Furniture Grid -->
+        <div class="furniture-grid">
+            <!-- Item 1 -->
+            <div class="furniture-card" data-category="chairs">
+                <div class="furniture-img">
+                    [Furniture Photo]
+                    <span class="price-tag">$120</span>
+                </div>
+                <div class="furniture-info">
+                    <h3 class="furniture-title">Modern Accent Chair</h3>
+                    <p class="furniture-desc">Contemporary velvet chair with wooden legs, perfect for living spaces.</p>
+                    <a href="https://www.facebook.com/marketplace/item/example" class="marketplace-btn" target="_blank">View on Marketplace</a>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="furniture-card" data-category="tables">
+                <div class="furniture-img">
+                    [Furniture Photo]
+                    <span class="price-tag">$250</span>
+                </div>
+                <div class="furniture-info">
+                    <h3 class="furniture-title">Coffee Table</h3>
+                    <p class="furniture-desc">Mid-century modern coffee table with glass top and walnut finish.</p>
+                    <a href="https://www.facebook.com/marketplace/item/example" class="marketplace-btn" target="_blank">View on Marketplace</a>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="furniture-card" data-category="desks">
+                <div class="furniture-img">
+                    [Furniture Photo]
+                    <span class="price-tag">$180</span>
+                </div>
+                <div class="furniture-info">
+                    <h3 class="furniture-title">Home Office Desk</h3>
+                    <p class="furniture-desc">Minimalist writing desk with two drawers and cable management.</p>
+                    <a href="https://www.facebook.com/marketplace/item/example" class="marketplace-btn" target="_blank">View on Marketplace</a>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="furniture-card" data-category="storage">
+                <div class="furniture-img">
+                    [Furniture Photo]
+                    <span class="price-tag">$90</span>
+                </div>
+                <div class="furniture-info">
+                    <h3 class="furniture-title">Bookshelf</h3>
+                    <p class="furniture-desc">5-tier industrial-style shelf unit with adjustable heights.</p>
+                    <a href="https://www.facebook.com/marketplace/item/example" class="marketplace-btn" target="_blank">View on Marketplace</a>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="furniture-card" data-category="chairs">
+                <div class="furniture-img">
+                    [Furniture Photo]
+                    <span class="price-tag">$75</span>
+                </div>
+                <div class="furniture-info">
+                    <h3 class="furniture-title">Dining Chair (Set of 2)</h3>
+                    <p class="furniture-desc">Scandinavian-inspired chairs with woven seats and beechwood frames.</p>
+                    <a href="https://www.facebook.com/marketplace/item/example" class="marketplace-btn" target="_blank">View on Marketplace</a>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="furniture-card" data-category="tables">
+                <div class="furniture-img">
+                    [Furniture Photo]
+                    <span class="price-tag">$350</span>
+                </div>
+                <div class="furniture-info">
+                    <h3 class="furniture-title">Dining Table</h3>
+                    <p class="furniture-desc">Expandable farmhouse table seats 6-8 people with rustic charm.</p>
+                    <a href="https://www.facebook.com/marketplace/item/example" class="marketplace-btn" target="_blank">View on Marketplace</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Category Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.category-btn');
+            const furnitureItems = document.querySelectorAll('.furniture-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filterValue = button.dataset.category;
+
+                    // Filter items
+                    furnitureItems.forEach(item => {
+                        if (filterValue === 'all' || item.dataset.category === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
