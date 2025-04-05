@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Software Projects | Repository-V</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional Software-Specific Styles */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+            width: 100%;
+        }
 
+        .software-card {
+            background: var(--bg-darker);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .software-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(110, 69, 226, 0.3);
+        }
+
+        .software-img {
+            width: 100%;
+            height: 200px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .software-info {
+            padding: 1.5rem;
+        }
+
+        .software-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .software-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="software.html" class="active">Software</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="hero">
+            <h1>Software Projects</h1>
+            <div class="divider"></div>
+            <p class="description">
+                A collection of my programming work and digital creations.
+            </p>
+        </header>
+
+        <!-- Software Grid -->
+        <div class="software-grid">
+            <!-- Project 1 -->
+            <div class="software-card">
+                <div class="software-img">
+                    [Project Screenshot]
+                </div>
+                <div class="software-info">
+                    <h3 class="software-title">Project Alpha</h3>
+                    <p class="software-desc">
+                        A modern web application built with React and Node.js that solves problem X.
+                    </p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="software-card">
+                <div class="software-img">
+                    [Project Screenshot]
+                </div>
+                <div class="software-info">
+                    <h3 class="software-title">Mobile App Beta</h3>
+                    <p class="software-desc">
+                        Cross-platform mobile application developed with Flutter for iOS and Android.
+                    </p>
+                    <a href="#" class="btn">Download</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="software-card">
+                <div class="software-img">
+                    [Project Screenshot]
+                </div>
+                <div class="software-info">
+                    <h3 class="software-title">API Service</h3>
+                    <p class="software-desc">
+                        RESTful API service with Python and FastAPI for handling complex data.
+                    </p>
+                    <a href="#" class="btn">Documentation</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="software-card">
+                <div class="software-img">
+                    [Project Screenshot]
+                </div>
+                <div class="software-info">
+                    <h3 class="software-title">Game Development</h3>
+                    <p class="software-desc">
+                        2D platformer game created with Unity and C# featuring unique mechanics.
+                    </p>
+                    <a href="#" class="btn">Play Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
