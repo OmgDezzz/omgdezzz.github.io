@@ -9,7 +9,6 @@
     --divider: rgba(255, 255, 255, 0.1);
 }
 
-/* Font Import (Poppins as fallback for Piximisa) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -160,6 +159,126 @@ body {
     justify-content: center;
 }
 
+/* === Furniture Page Styles === */
+.furniture-header {
+    margin-bottom: 2rem;
+}
+
+.furniture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.furniture-card {
+    background: var(--bg-darker);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.furniture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(110, 69, 226, 0.2);
+}
+
+.furniture-img {
+    width: 100%;
+    height: 200px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    position: relative;
+    overflow: hidden; /* Ensures images don't overflow */
+}
+
+/* NEW: Image sizing rules (added) */
+.furniture-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill container without stretching */
+    object-position: center; /* Focus on center of image */
+    display: block;
+}
+
+.price-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 1; /* Ensures price stays above image */
+}
+
+.furniture-info {
+    padding: 1.2rem;
+}
+
+.furniture-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.furniture-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    min-height: 40px;
+}
+
+.marketplace-btn {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    background: #1877F2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.marketplace-btn:hover {
+    background: #166FE5;
+}
+
+.category-filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 0.5rem 1.2rem;
+    background: var(--bg-darker);
+    border: 1px solid var(--divider);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
 /* === Responsive Design === */
 @media (max-width: 768px) {
     .hero h1 {
@@ -170,5 +289,11 @@ body {
     }
     .btn {
         padding: 0.6rem 1.4rem;
+    }
+    .furniture-grid {
+        grid-template-columns: 1fr;
+    }
+    .furniture-img {
+        height: 180px;
     }
 }
