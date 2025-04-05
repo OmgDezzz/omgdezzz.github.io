@@ -33,8 +33,36 @@ document.addEventListener('DOMContentLoaded', function() {
         yearElement.textContent = new Date().getFullYear();
     }
 
-    // Add hover effect to furniture/software cards (will work with future pages)
-    document.querySelectorAll('.card').forEach(card => {
+    // ===== UPDATED FURNITURE CARD HOVER EFFECT =====
+    document.querySelectorAll('.furniture-card').forEach(card => {
+        // Initialize price tag position
+        const priceTag = card.querySelector('.price-tag');
+        if (priceTag) {
+            priceTag.style.position = 'absolute';
+            priceTag.style.top = '10px';
+            priceTag.style.right = '10px';
+            priceTag.style.zIndex = '10';
+        }
+
+        // Hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 20px rgba(110, 69, 226, 0.2)';
+            
+            // Lock price tag position during animation
+            if (priceTag) {
+                priceTag.style.transform = 'translateZ(0)'; // Force hardware acceleration
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+        });
+    });
+
+    // Original card hover effects (for non-furniture cards)
+    document.querySelectorAll('.card:not(.furniture-card)').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px)';
             this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.3)';
@@ -74,4 +102,16 @@ function loadContent(url, elementId) {
             document.getElementById(elementId).innerHTML = data;
         })
         .catch(error => console.error('Error loading content:', error));
+}
+
+// Initialize menu function for resize event
+function initMobileMenu() {
+    const menuToggle = document.createElement('div');
+    menuToggle.className = 'mobile-menu-toggle';
+    menuToggle.innerHTML = '☰';
+    document.querySelector('.navbar').prepend(menuToggle);
+    
+    menuToggle.addEventListener('click', function() {
+        document.querySelector('.navbar ul').classList.toggle('active');
+    });
 }
