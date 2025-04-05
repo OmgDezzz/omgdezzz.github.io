@@ -3,25 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repository-V</title>
+    <title>Repository-V | Victor Fernandez</title>
+    <!-- Piximisa-like font (using Poppins as fallback) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <!-- Particle.js Background -->
     <div id="particles-js"></div>
-    <nav>
-        <h1>Repository-V</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="furniture.html">Furniture</a></li>
-            <li><a href="software.html">Software</a></li>
-        </ul>
-    </nav>
-    
-    <section class="home">
-        <h1>Welcome to Repository-V</h1>
-        <p>I was born in Holguin, Cuba. I am a United States Navy veteran, and I worked in the medical field as a Corpsman, which is the Navy term for a medic. Currently, I am studying Computer Science and Artificial Intelligence, with a passion for entrepreneurship. I am working on several exciting projects ranging from furniture and clothing to software and AI. This website serves as a hub for all my different projects, and you can explore them by navigating the menu above. If you're looking for a great place to eat, check out my sister’s restaurant, "Pizza Art Wine" located in Highland Perkins.</p>
-    </section>
-    
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Navigation Menu -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="software.html">Software</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Repository-V</h1>
+            <p class="subtitle">by: Victor Fernandez</p>
+            <div class="divider"></div>
+            <p class="description">
+                A space to showcase my software projects and furniture for sale. 
+                Minimalism meets functionality.
+            </p>
+        </header>
+
+        <!-- Quick Links (Optional) -->
+        <div class="quick-links">
+            <a href="furniture.html" class="btn">View Furniture</a>
+            <a href="software.html" class="btn">Explore Software</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="particles.js"></script>
     <script src="script.js"></script>
 </body>
