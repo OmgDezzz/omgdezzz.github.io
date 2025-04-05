@@ -1,26 +1,77 @@
-document.addEventListener("DOMContentLoaded", function () {
-    particlesJS.load("particles-js", "particles.json", function () {
-        console.log("Particles.js loaded successfully.");
+// DOM Content Loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle (for future responsiveness)
+    const initMobileMenu = () => {
+        const menuToggle = document.createElement('div');
+        menuToggle.className = 'mobile-menu-toggle';
+        menuToggle.innerHTML = '☰';
+        document.querySelector('.navbar').prepend(menuToggle);
+        
+        menuToggle.addEventListener('click', function() {
+            document.querySelector('.navbar ul').classList.toggle('active');
+        });
+    };
+
+    // Initialize mobile menu if screen is small
+    if (window.innerWidth <= 768) {
+        initMobileMenu();
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 
-    const navLinks = document.querySelectorAll(".nav-link");
-    navLinks.forEach(link => {
-        link.addEventListener("mouseover", () => {
-            link.style.transform = "scale(1.1)";
-            link.style.transition = "transform 0.2s ease-in-out";
+    // Dynamic year for footer (if added later)
+    const yearElement = document.querySelector('.year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    // Add hover effect to furniture/software cards (will work with future pages)
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.3)';
         });
-        link.addEventListener("mouseout", () => {
-            link.style.transform = "scale(1)";
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
         });
     });
 
-    window.addEventListener("scroll", () => {
-        const header = document.querySelector("header");
-        if (window.scrollY > 50) {
-            header.style.background = "rgba(20, 20, 20, 0.9)";
-            header.style.backdropFilter = "blur(10px)";
-        } else {
-            header.style.background = "transparent";
-        }
-    });
+    // Particle.js initialization fallback
+    if (typeof particlesJS === 'undefined') {
+        console.warn('particlesJS not loaded - check CDN link');
+    } else {
+        console.log('Particles.js loaded successfully');
+    }
 });
+
+// Window resize event listener
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        const mobileMenu = document.querySelector('.mobile-menu-toggle');
+        const navList = document.querySelector('.navbar ul');
+        if (mobileMenu) mobileMenu.remove();
+        if (navList) navList.classList.remove('active');
+    } else if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-toggle')) {
+        initMobileMenu();
+    }
+});
+
+// Helper function for future AJAX loading
+function loadContent(url, elementId) {
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => console.error('Error loading content:', error));
+}
