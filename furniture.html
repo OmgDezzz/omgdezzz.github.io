@@ -35,11 +35,13 @@
         </div>
 
         <div class="furniture-grid">
-            <!-- Item 1 - Corrected Structure -->
+            <!-- Item 1 (Updated with new image container) -->
             <div class="furniture-card" data-category="chairs">
                 <div class="furniture-img-container">
-                    <img src="images/netwn.jpg" alt="Twin Size Nectar Hybrid Mattress" class="furniture-photo">
-                    <span class="price-tag">$200</span> <!-- Moved inside container -->
+                    <div class="furniture-img">
+                        <img src="images/netwn.jpg" alt="Twin Size Nectar Hybrid Mattress" class="furniture-photo">
+                    </div>
+                    <span class="price-tag">$200</span>
                 </div>
                 <div class="furniture-info">
                     <h3 class="furniture-title">Twin Size Nectar Hybrid Mattress</h3>
@@ -48,10 +50,12 @@
                 </div>
             </div>
 
-            <!-- Item 2 -->
+            <!-- Item 2 (Other items follow same structure) -->
             <div class="furniture-card" data-category="tables">
                 <div class="furniture-img-container">
-                    <img src="images/placeholder.jpg" alt="Coffee Table" class="furniture-photo">
+                    <div class="furniture-img">
+                        <img src="images/placeholder.jpg" alt="Coffee Table" class="furniture-photo">
+                    </div>
                     <span class="price-tag">$250</span>
                 </div>
                 <div class="furniture-info">
@@ -68,7 +72,7 @@
     <script src="particles.js"></script>
     <script src="script.js"></script>
     <script>
-        // Filter functionality remains unchanged
+        // Category filter JS (unchanged)
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.category-btn');
             const furnitureItems = document.querySelectorAll('.furniture-card');
